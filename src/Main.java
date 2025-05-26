@@ -1,11 +1,11 @@
 public class Main {
     public static void main(String[] args) {
         System.out.println("Задача 1");
-        int agePersons = 18;
-        if (agePersons >= 18) {
-            System.out.println(" Если возраст человека равен " + agePersons + " то он совершеннолетний ");
+        int agePerson = 18;
+        if (agePerson >= 18) {
+            System.out.println(" Если возраст человека равен " + agePerson + " то он совершеннолетний ");
         } else {
-            System.out.println("Если возраст человека равен " + agePersons + " то он он не достиг совершеннолетия, нужно немного подождать ");
+            System.out.println("Если возраст человека равен " + agePerson + " то он он не достиг совершеннолетия, нужно немного подождать ");
         }
         System.out.println("Задача 2");
         int outsideTemperature = 5;
@@ -22,24 +22,24 @@ public class Main {
             System.out.println(" Если скорость " + speedCar + ", то можно ездить спокойно ");
         }
         System.out.println(" Задача 4 ");
-        agePersons = 19;
-        if (agePersons >= 2 && agePersons <= 6) {
-            System.out.println(" Если человеку " + agePersons + ", то ему нужно ходить в детский сад ");
-        } else if (agePersons >= 7 && agePersons <= 17) {
-            System.out.println(" Если человеку " + agePersons + ", то ему нужно ходить в школу ");
-        } else if (agePersons >= 18 && agePersons <= 24) {
-            System.out.println("Если человеку " + agePersons + ", то его место в университете ");
+        agePerson = 19;
+        if (agePerson >= 2 && agePerson <= 6) {
+            System.out.println(" Если человеку " + agePerson + ", то ему нужно ходить в детский сад ");
+        } else if (agePerson >= 7 && agePerson <= 17) {
+            System.out.println(" Если человеку " + agePerson + ", то ему нужно ходить в школу ");
+        } else if (agePerson >= 18 && agePerson <= 24) {
+            System.out.println("Если человеку " + agePerson + ", то его место в университете ");
         } else {
-            System.out.println("Если человеку " + agePersons + ", то ему пора ходить на работу ");
+            System.out.println("Если человеку " + agePerson + ", то ему пора ходить на работу ");
         }
         System.out.println(" Задача 5 ");
-        agePersons = 5;
-        if (agePersons < 5) {
-            System.out.println("Если возраст ребенка равен " + agePersons + ", то ему нельзя кататься на аттракционе ");
-        } else if (agePersons >= 5 && agePersons < 14) {
-            System.out.println("Если возраст ребенка равен " + agePersons + ", то ему можно кататься на аттракционе в сопровождении");
+        agePerson = 5;
+        if (agePerson < 5) {
+            System.out.println("Если возраст ребенка равен " + agePerson + ", то ему нельзя кататься на аттракционе ");
+        } else if (agePerson >= 5 && agePerson < 14) {
+            System.out.println("Если возраст ребенка равен " + agePerson + ", то ему можно кататься на аттракционе в сопровождении");
         } else {
-            System.out.println("Если возраст ребенка равен " + agePersons + ", то он может кататься без сопровождения взрослого");
+            System.out.println("Если возраст ребенка равен " + agePerson + ", то он может кататься без сопровождения взрослого");
         }
         System.out.println(" Задача 6 ");
         int capacityСarriage = 102;
