@@ -1,55 +1,111 @@
-import java.sql.SQLOutput;
-
 public class Main {
     public static void main(String[] args) {
         System.out.println("Задача 1");
-        for (int i = 0; i <= 10; i++) {
-            System.out.println(" Иттерация цикла " + i);
+        int targetAmount = 2_459_000;
+        int monthlyFee = 15_000;
+        int currentSum = 0;
+        int months = 0;
+        while (currentSum < targetAmount) {
+            months++;
+            currentSum += monthlyFee;
+            System.out.println(" Месяц " + months + ", сумма накоплений равна " + currentSum + " рублей");
         }
+
+        System.out.println("Потребуется " + months + " месяца , чтобы накопить " + targetAmount + " рублей");
+
         System.out.println("Задача 2");
-        for (int i = 10; i >= 0; i--) {
-            System.out.println("Иттерация цикла" + i);
+        int i = 1;
+        while (i <= 10) {
+            System.out.print(i + " ");
+            i++;
         }
+
+
+        System.out.println();
+
+        for (int j = 10; j >= 1; j--) {
+
+            System.out.print(j + " ");
+
+        }
+
         System.out.println("Задача 3");
-        for (int i = 0; i <= 17; i += 2) {
-            System.out.println(i);
+        int population = 12_000_000;
+        int birthRatePerThousand = 17;
+        int deathRatePerThousand = 8;
+        int years = 10;
+
+        for (int year = 1; year <= years; year++) {
+            int births = (population * birthRatePerThousand) / 1000;
+            int deaths = (population * deathRatePerThousand) / 1000;
+            population = population + births - deaths;
+            System.out.println("Год " + year + ", численность населения составляет " + population);
         }
         System.out.println("Задача 4");
-        for (int i = 10; i >= -10; i--) {
-            System.out.println(i);
+        int currentAmount = 15000;
+        double monthlyInterestRate = 0.07;
+        targetAmount = 12_000_000;
+        int monthCount = 0;
+
+        while (currentAmount < targetAmount) {
+            monthCount++;
+            currentAmount += currentAmount * monthlyInterestRate;
+
+            System.out.println("Через " + monthCount + " месяцев,сумма накоплений:" + currentAmount + " рублей");
+
         }
-        System.out.println("Задача 5");
-        for (int i = 1904; i < 2096; i = i + 4) {
-            System.out.println("Високосный год " + i);
+        System.out.println("Задача 5 ");
+        currentAmount = 15000;
+        targetAmount = 12_000_000;
+        monthlyInterestRate = 0.07;
+        monthCount = 0;
+
+        while (currentAmount <= targetAmount) {
+            monthCount++;
+            currentAmount += currentAmount * monthlyInterestRate;
+
+            if (monthCount % 6 == 0) {
+                System.out.println("Через " + monthCount + " месяцев,сумма накоплений:" + currentAmount + " рублей");
+            }
         }
         System.out.println("Задача 6");
-        for (int i = 7; i <= 98; i = i += 7) {
-            System.out.println(i);
+        currentAmount = 15000;
+        monthlyInterestRate = 0.07;
+        int totalMonths = 9 * 12;
+
+        for (int month = 1; month <= totalMonths; month++) {
+            currentAmount += currentAmount * monthlyInterestRate;
+
+            if (month % 6 == 0) {
+                System.out.println("Через " + month + " месяцев,сумма накоплений:" + currentAmount + " рублей");
+            }
         }
         System.out.println("Задача 7");
-        for (int i = 1; i <= 512; i = i *= 2) {
-            System.out.println(i);
+        int firstFriday = 6;
+        int daysInMonth = 31;
+
+        for (int fridayDay = firstFriday; fridayDay <= daysInMonth; fridayDay += 7) {
+            System.out.println("Сегодня пятница, " + fridayDay + " -е число.Необходимо подготовить отчет");
         }
         System.out.println("Задача 8");
-        int monthlySavings = 29000;
-        int totalSavings = 0;
-        for (int month = 1; month <= 12; month++) {
-            totalSavings += monthlySavings;
-            System.out.println("Месяц " + month + " сумма накоплений равна " + totalSavings + " рублей");
+        int currentYear = 2025;
+        int startYear = currentYear - 200;
+        int endYear = currentYear + 100;
+
+        int cometPeriod = 79;
+
+        int firstAppearance;
+        if (startYear % cometPeriod == 0) {
+            firstAppearance = startYear;
+        } else {
+            firstAppearance = startYear + (cometPeriod - (startYear % cometPeriod));
         }
-        System.out.println("Задача 9");
-        int salary = 29000;
-        int total = 0;
-        for (int month = 0; month < 12; month++) {
-            total = total + salary;
-            total = total + total / 100;
-            System.out.println("Месяц " + month + " сумма накоплений равна " + total);
-        }
-        System.out.println("Задача 10");
-        int number = 2;
-        for (int i = 1; i <= 10; i++) {
-            int result = number * i;
-            System.out.println(number + " * " + i + " = " + result);
-        }
+
+        for (int year = firstAppearance; year <= endYear; year += cometPeriod) {
+            if (year >= startYear && year <= currentYear) {
+            }
+            System.out.println(year); }
+
     }
 }
+
