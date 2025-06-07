@@ -74,7 +74,7 @@ public class Main {
         }
         System.out.println();
 
-        System.out.println("Задача 4");
+        System.out.println("Задача 4 ");
         int[] intArrays = {1, 2, 3};
         for (int i = 0; i < intArrays.length; i++) {
             if (intArrays[i] % 2 != 0) {
