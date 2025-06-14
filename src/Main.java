@@ -1,87 +1,47 @@
-import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args) {
         System.out.println("Задача 1");
-        int[] intArray = new int[3];
-        intArray[0] = 1;
-        intArray[1] = 2;
-        intArray[2] = 3;
+        int[] weeklyExpenses = {14000, 15000, 20000, 22000, 11000};
+        int totalExpenses = 0;
+        for (int expense : weeklyExpenses) {
+            totalExpenses += expense;
 
-        System.out.println("Массив цифр: ");
-        for (int num : intArray) {
-            System.out.println(num + " ");
         }
+        System.out.println("Сумма трат за месяц составила " + totalExpenses + " рублей");
 
-        double[] doubleArray = {1.57, 7.654, 9.986};
-        System.out.println("Массив дробных чисел: ");
-        for (double num : doubleArray) {
-            System.out.println(num + " ");
-        }
 
-        String[] months = {"Январь", "Февраль", "Март", "Апрель"};
-        System.out.println("Массив произвольных строк: ");
-        for (String month : months) {
-            System.out.println(month + " ");
-        }
         System.out.println("Задача 2");
-        for (int i = 0; i < intArray.length; i++) {
-            System.out.print(intArray[i]);
-            if (i < intArray.length - 1) {
-                System.out.print(", ");
+        int[] weeklyExpense = {25000, 13900, 7000, 5000, 19000};
+        int minExpense = weeklyExpense[0];
+        int maxExpense = weeklyExpense[0];
+        for (int expense : weeklyExpense) {
+            if (expense < minExpense) {
+                minExpense = expense;
+            }
+            if (expense > maxExpense) {
+                maxExpense = expense;
             }
         }
-        System.out.println();
+        System.out.println("Минимальная сумма трат за неделю составила " + minExpense + " рублей");
+        System.out.println("Максимальная сумма трат за неделю составила " + maxExpense + " рублей");
 
-        for (int i = 0; i < doubleArray.length; i++) {
-            System.out.print(doubleArray[i]);
-            if (i < doubleArray.length - 1) {
-                System.out.print(", ");
-            }
-        }
-        System.out.println();
-
-        for ( int i = 0; i < months.length; i++) {
-            System.out.print(months[i]);
-            if (i < months.length - 1) {
-                System.out.print(", ");
-            }
-        }
-        System.out.println();
 
         System.out.println("Задача 3");
-        for (int i = intArray.length - 1; i >= 0; i--) {
-            System.out.print(intArray[i]);
-            if (i > 0) {
-                System.out.print(", ");
-            }
+        int[] weekExpenses = {35000, 17542, 15239, 8000, 23000};
+        totalExpenses = 0;
+        for (int expense : weekExpenses) {
+            totalExpenses += expense;
         }
-        System.out.println();
+        double averageExpense = (double) totalExpenses / weekExpenses.length;
+        System.out.println("Средняя сумма трат за месяц составила " + averageExpense + " рублей");
 
-        for (int i = doubleArray.length - 1; i >= 0; i--) {
-            System.out.print(doubleArray[i]);
-            if (i > 0) {
-                System.out.print(", ");
-            }
+        System.out.println("Задача 4");
+        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int i = 0; i < reverseFullName.length / 2; i++) {
+            char temp = reverseFullName[i];
+            reverseFullName[i] = reverseFullName[reverseFullName.length - 1 - i];
+            reverseFullName[reverseFullName.length - 1 - i] = temp;
         }
-        System.out.println();
-
-        for (int i = months.length - 1;i>= 0; i --) {
-            System.out.print(months[i]);
-            if (i > 0) {
-                System.out.print(", ");
-            }
-        }
-        System.out.println();
-
-        System.out.println("Задача 4 ");
-        int[] intArrays = {1, 2, 3};
-        for (int i = 0; i < intArrays.length; i++) {
-            if (intArrays[i] % 2 != 0) {
-                intArrays[i] += 1;
-            }
-        }
-        System.out.println(Arrays.toString(intArrays));
+        System.out.println(reverseFullName);
     }
 }
-
