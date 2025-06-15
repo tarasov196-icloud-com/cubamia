@@ -1,19 +1,53 @@
+
+import java.time.LocalDate;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Задача 1");
-        String firstName = "Ivan";
-        String middleName = "Ivanovich";
-        String lastName = "Ivanov";
-        String fullName = lastName + " " + firstName + " " + middleName;
-        System.out.println("Ф. И. О. сотрудника - " + fullName);
+        // task 1
+        int year = 2024;
+        if (isLeapYear(year)) {
+            System.out.println(year + " год високосный");
+        } else {
+            System.out.println(year + " год невисокосный");
+        }
 
-        System.out.println("Задача 2");
-        String fullName1 = fullName.toUpperCase();
-        System.out.println("Данные Ф. И. О. сотрудника для заполнения отчета —" + fullName1);
+        suggestAppVersion(1, 2025);
+        suggestAppVersion(0, 2014);
 
-        System.out.println("Задача 3");
-        fullName = "Иванов Семён Семёнович";
-        fullName = fullName.replace("ё", "е");
-        System.out.println("Данные Ф. И. О. сотрудника —" + fullName);
+        int deliveryDistance = 95;
+        int daysForDelivery = calculateDeliveryDays(deliveryDistance);
+        if (daysForDelivery == -1) {
+            System.out.println("Доставка невозможна");
+        } else {
+            System.out.println("Потребуется дней " + daysForDelivery);
+        }
+    }
+
+    public static boolean isLeapYear(int year) {
+        return (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0);
+        // task 2
+
+
+    }
+
+    public static void suggestAppVersion(int osType, int deviceYear) {
+        int currentYear = LocalDate.now().getYear();
+        String osName = osType == 0 ? "iOS" : "Android";
+        String version = deviceYear < currentYear ? "облегченную" : "обычную";
+        String message = String.format("Установите " + version + " версию приложения для " + osName + " по ссылке");
+        System.out.println(message);
+    }
+
+    public static int calculateDeliveryDays(int deliveryDistance) {
+        if (deliveryDistance >= 0 && deliveryDistance <= 20) {
+            return 1;
+        } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
+            return 2;
+        } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
+            return 3;
+        } else {
+            return -1;
+        }
     }
 }
+
